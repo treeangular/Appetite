@@ -5,5 +5,5 @@
  * Time: 17:18
  * To change this template use File | Settings | File Templates.
  */
-Appetite.controller('AccountCtrl', function($scope) {
+angular.module('appetite.controllers').controller('AccountCtrl', function($scope) {
 });

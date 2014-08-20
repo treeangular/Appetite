@@ -1,9 +1,8 @@
 /**
  * Created with JetBrains WebStorm.
  * User: Javito
- * Date: 9/08/14
- * Time: 17:18
+ * Date: 20/08/14
+ * Time: 20:59
  * To change this template use File | Settings | File Templates.
  */
-angular.module('appetite.controllers').controller('DashCtrl', function($scope) {
-})
+angular.module('appetite.controllers',[]);
