@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('appetite', ['ionic', 'appetite.controllers'])
+angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
