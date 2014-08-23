@@ -10,11 +10,11 @@ angular.module('appetite.services')
 /**
  * Parse Service com as a back-end for the application.
  */
-    .factory('Parse', function ($q, $rootScope, parseService) {
+    .factory('Parse', function ($q, $rootScope) {
 
         var FriendDetail = Parse.Object.extend("FriendDetail");
 
-        var getFriendDetail = function getFriendDetails(friendName)
+        var getFriendDetails = function getFriendDetails(friendName)
         {
             var deferred = $q.defer();
             console.log("getting friend details of " + friendName);
@@ -38,8 +38,10 @@ angular.module('appetite.services')
         var parseService = {
             name: "Parse",
 
-            getFriendDetail: getFriendDetail
+            getFriendDetail: getFriendDetails
 
         };
+
+        return parseService;
 
     });

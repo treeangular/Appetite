@@ -5,6 +5,6 @@
  * Time: 17:16
  * To change this template use File | Settings | File Templates.
  */
-angular.module('appetite.controllers').controller('FriendsCtrl', function($scope, Friends) {
-    $scope.friends = Friends.all();
+angular.module('appetite.controllers').controller('FriendsCtrl', function($scope, MockFriends) {
+    $scope.friends = MockFriends.all();
 })
