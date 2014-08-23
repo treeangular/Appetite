@@ -14,12 +14,12 @@ angular.module('appetite.services')
 
         var FriendDetail = Parse.Object.extend("FriendDetail");
 
-        var getFriendDetails = function getFriendDetails(friendName)
+        var getFriendDetails = function getFriendDetails(friendId)
         {
             var deferred = $q.defer();
-            console.log("getting friend details of " + friendName);
+            console.log("getting friend details of " + friendId);
             var query = new Parse.Query(FriendDetail);
-            query.equalTo("Name",friendName);
+            query.equalTo("Id",friendId);
 
             query.first().then(function(friendDetail){
 
