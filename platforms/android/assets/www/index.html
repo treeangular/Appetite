@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="scripts/lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="scripts/vendor/ionic/css/ionic.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -13,20 +13,24 @@
     -->
 
     <!-- ionic/angularjs js -->
-    <script src="scripts/lib/ionic/js/ionic.bundle.js"></script>
+    <script src="scripts/vendor/ionic/js/ionic.bundle.js"></script>
+    <script src="scripts/vendor/parse/parse-1.2.19.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/account.js"></script>
-    <script src="scripts/controllers/dash.js"></script>
-    <script src="scripts/controllers/friendDetail.js"></script>
-    <script src="scripts/controllers/friends.js"></script>
-    <script src="scripts/services.js"></script>
+    <script src="scripts/controllers/MainCtrl.js"></script>
+    <script src="scripts/controllers/AccountCtrl.js"></script>
+    <script src="scripts/controllers/DashCtrl.js"></script>
+    <script src="scripts/controllers/FriendDetailCtrl.js"></script>
+    <script src="scripts/controllers/FriendsCtrl.js"></script>
+    <script src="scripts/services/mainService.js"></script>
+    <script src="scripts/services/mock.js"></script>
+    <script src="scripts/services/parse.js"></script>
   </head>
-  <body ng-app="starter" animation="slide-left-right-ios7">
+  <body ng-app="appetite" animation="slide-left-right-ios7">
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
