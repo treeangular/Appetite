@@ -80,5 +80,16 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
+  loadParse();
+
 });
+
+function loadParse()
+{
+    var PARSE_APP_ID = "RCREiObXuaqyM2kg5RHkJqmObD21AL52l0uleGA1";
+    var PARSE_JS_ID = "J6oVk4gyfM1JY92GhoVnY7ROlcd8CDUXkrCEHlri";
+
+
+    Parse.initialize(PARSE_APP_ID, PARSE_JS_ID);
+}
 
