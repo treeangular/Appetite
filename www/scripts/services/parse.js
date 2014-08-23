@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-angular.module('appetite.services', [])
+angular.module('appetite.services')
 /**
  * Parse Service com as a back-end for the application.
  */

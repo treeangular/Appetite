@@ -5,10 +5,14 @@
  * Time: 11:40
  * To change this template use File | Settings | File Templates.
  */
-angular.module('appetite.services', [])
-/**
- * A simple example service that returns some data.
- */
+
+//We cannot use angular.module('appetite.services', []) because
+//Beware that using angular.module('myModule', [])
+// will create the module myModule and overwrite any existing module named myModule.
+// Use angular.module('myModule') to retrieve an existing module.
+
+angular.module('appetite.services')
+
     .factory('Friends', function() {
         // Might use a resource here that returns a JSON array
 
