@@ -5,5 +5,8 @@
  * Time: 17:18
  * To change this template use File | Settings | File Templates.
  */
-angular.module('appetite.controllers').controller('DashCtrl', function($scope) {
+angular.module('appetite.controllers').controller('DashCtrl', function($scope, $rootScope) {
+
+    if($rootScope.gaPlugIn !== undefined)
+        $rootScope.gaPlugIn.trackPage(function(){}, function(){},"DashCtrl");
 })

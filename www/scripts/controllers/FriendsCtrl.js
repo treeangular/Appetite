@@ -5,6 +5,10 @@
  * Time: 17:16
  * To change this template use File | Settings | File Templates.
  */
-angular.module('appetite.controllers').controller('FriendsCtrl', function($scope, MockFriends) {
+angular.module('appetite.controllers').controller('FriendsCtrl', function($scope, MockFriends, $rootScope) {
+
+    if($rootScope.gaPlugIn !== undefined)
+        $rootScope.gaPlugIn.trackPage(function(){}, function(){},"FriendsCtrl");
+
     $scope.friends = MockFriends.all();
 })
