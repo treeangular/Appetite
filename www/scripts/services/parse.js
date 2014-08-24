@@ -19,15 +19,17 @@ angular.module('appetite.services')
             var deferred = $q.defer();
             console.log("getting friend details of " + friendId);
             var query = new Parse.Query(FriendDetail);
-            query.equalTo("Id",friendId);
+            query.equalTo("Name","Scruff McGruff");
 
             query.first().then(function(friendDetail){
 
-                return friendDetail;
+                $rootScope.$apply(function () {
+                    deferred.resolve(friendDetail);
+                });
 
             }, function(error)
             {
-                $rootScope.$apply(function () {
+                $scope.$apply(function () {
                     deferred.reject("Error getFriendDetails");
                 });
             });

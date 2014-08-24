@@ -14,34 +14,27 @@ angular.module('appetite.controllers').controller('FriendDetailCtrl', function($
     {
         var deferred = $q.defer();
 
-        Parse.getFriendDetail(friendId, function (isSuccess,results) {
-            $scope.$apply(function () {
+        Parse.getFriendDetail(friendId).then(
+            function(result){
 
-                    if(isSuccess)
-                    {
-                        deferred.resolve(results);
+                deferred.resolve(result);
 
-                        // send notification a request has started
-                    }
-                    else
-                    {
-                        deferred.reject(results);
-                    }
-                }
-                )
-            });
+            },function(error){
+                deferred.reject(error);
+            })
+
         return deferred.promise;
 
     }
 
-    $scope.friend  = function() {
+    var promise = getFriendDetails($stateParams.friendId);
+    promise.then(function(friendDetail) {
 
-        var promise = getFriendDetails($stateParams.friendId);
-        promise.then(function() {
+        $scope.friendDetail = friendDetail;
 
 
-        }, function(reason) {
+    }, function(reason) {
 
-        });
-    };
+    });
+
 })
