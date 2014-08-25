@@ -19,19 +19,14 @@ angular.module('appetite.services')
             var deferred = $q.defer();
             console.log("getting friend details of " + friendId);
             var query = new Parse.Query(FriendDetail);
-            query.equalTo("Name","Scruff McGruff");
+            query.equalTo("Name",friendId);
 
             query.first().then(function(friendDetail){
-
-                $rootScope.$apply(function () {
-                    deferred.resolve(friendDetail);
-                });
+                  deferred.resolve(friendDetail);
 
             }, function(error)
             {
-                $scope.$apply(function () {
-                    deferred.reject("Error getFriendDetails");
-                });
+                deferred.reject("Error getFriendDetails");
             });
 
             return deferred.promise;
@@ -41,6 +36,8 @@ angular.module('appetite.services')
             name: "Parse",
 
             getFriendDetail: getFriendDetails
+
+
 
         };
 

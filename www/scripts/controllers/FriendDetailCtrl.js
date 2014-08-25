@@ -10,31 +10,9 @@ angular.module('appetite.controllers').controller('FriendDetailCtrl', function($
     if($rootScope.gaPlugIn !== undefined)
         $rootScope.gaPlugIn.trackPage(function(){}, function(){},"FriendDetailCtrl");
 
-    function getFriendDetails(friendId)
-    {
-        var deferred = $q.defer();
-
-        Parse.getFriendDetail(friendId).then(
-            function(result){
-
-                deferred.resolve(result);
-
-            },function(error){
-                deferred.reject(error);
-            })
-
-        return deferred.promise;
-
-    }
-
-    var promise = getFriendDetails($stateParams.friendId);
-    promise.then(function(friendDetail) {
-
-        $scope.friendDetail = friendDetail;
-
-
-    }, function(reason) {
-
+    Parse.getFriendDetail($stateParams.friendId).then(function(friendDetail) {
+            var friendDetails = friendDetail;
+            console.log(friendDetails.get("Name"));
+            //$scope.Name = friendDetails.get("Name");
     });
-
 })
