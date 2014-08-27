@@ -13,6 +13,6 @@ angular.module('appetite.controllers').controller('FriendDetailCtrl', function($
     Parse.getFriendDetail($stateParams.friendId).then(function(friendDetail) {
             var friendDetails = friendDetail;
             console.log(friendDetails.get("Name"));
-            //$scope.Name = friendDetails.get("Name");
+            $scope.Name = friendDetails.get("Name");
     });
 })
