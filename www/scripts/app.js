@@ -21,7 +21,7 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
       StatusBar.styleDefault();
     }
 
-    gaPlugin = $window.plugins.gaPlugin;
+    /*gaPlugin = $window.plugins.gaPlugin;
     gaPlugin.init(function(){}, function(){console.log("Error")}, googleAnalyticsIdApp, 10);
     $rootScope.gaPlugIn = gaPlugin;
 
@@ -29,7 +29,7 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
       if($rootScope.gaPlugIn === undefined)
       {
           console.log("App: $rootScope.gaPlugIn === undefined ");
-      }
+      }    */
 
   });
 })
