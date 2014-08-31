@@ -1,4 +1,11 @@
+
 'use strict';
+
+describe('appetite', function () {
+    var scope,
+        controller;
+
+});
 
 describe('Controller: FriendDetailCtrl', function() {
 
@@ -8,8 +15,9 @@ describe('Controller: FriendDetailCtrl', function() {
     var FriendDetailCtrl;
     var q;
 
-    // load the controller's module
-    beforeEach(module('appetite'));
+    beforeEach(function () {
+        module('appetite');
+    });
 
     // define the mock Parse service
     beforeEach(function($q) {
@@ -21,14 +29,14 @@ describe('Controller: FriendDetailCtrl', function() {
             { id: 3, name: 'Ash Ketchum' }
         ];
         var deferred;
-        q = $q;
+
 
         MockParse = {
             // Some fake testing data
 
             getFriendDetail: function(friendId) {
                 // Simple index lookup
-                deferred = q.defer();
+                deferred = $q.defer();
                 return deferred.promise;
                 //return friends[friendId];
             }
@@ -47,14 +55,8 @@ describe('Controller: FriendDetailCtrl', function() {
 
     it('should call getFriendDetail from Parse Service', function () {
 
-
-
         spyOn(MockParse, 'getFriendDetail').andCallThrough();
-        //spyOn(ParseServiceMock, 'getBookRegistrationId').andCallThrough();
-        //scope.registerNewBook(book);
-
         expect(MockParse.getFriendDetail).toHaveBeenCalled();
-        //expect(ParseServiceMock.getBookRegistrationId).toHaveBeenCalled();
 
     });
 
@@ -62,3 +64,4 @@ describe('Controller: FriendDetailCtrl', function() {
         expect(true).toBe(true);
     });
 });
+
