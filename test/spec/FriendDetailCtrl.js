@@ -20,7 +20,7 @@ describe('Controller: FriendDetailCtrl', function() {
     });
 
     // define the mock Parse service
-    beforeEach(function($q) {
+    beforeEach(inject(function($q) {
 
         var friends = [
             { id: 0, name: 'Scruff McGruff' },
@@ -29,7 +29,6 @@ describe('Controller: FriendDetailCtrl', function() {
             { id: 3, name: 'Ash Ketchum' }
         ];
         var deferred;
-
 
         MockParse = {
             // Some fake testing data
@@ -42,7 +41,7 @@ describe('Controller: FriendDetailCtrl', function() {
             }
 
         };
-    });
+    }));
     // inject the required services and instantiate the controller
     //$scope, $stateParams, Parse
     beforeEach(inject(function($rootScope, $controller) {
