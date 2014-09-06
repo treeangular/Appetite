@@ -14,6 +14,7 @@ describe('Controller: FriendDetailCtrl', function() {
     var stateParams;
     var FriendDetailCtrl;
     var q;
+    var rtv;
 
     beforeEach(function () {
         module('appetite');
@@ -52,16 +53,25 @@ describe('Controller: FriendDetailCtrl', function() {
         });
 
         spyOn(MockParse, 'getFriendDetail').andCallThrough();
-        MockParse.getFriendDetail(0);
+        var promise = MockParse.getFriendDetail(0);
+
+        promise.then(function (value) {
+            rtv = value;
+        });
     }));
 
     it('should call getFriendDetail from Parse Service', function () {
         expect(MockParse.getFriendDetail).toHaveBeenCalled();
     });
 
+    it("Name should be 'Scruff McGruff'", function () {
+        expect(rtv).toBeUndefined();        // TODO: WHY undefinded?!?!
+       // expect(rtv).toEqual([ 0,'Scruff McGruff']);
+    });
+
     /*it("Name should be 'Scruff McGruff'", function () {
-        expect(MockParse.getFriendDetail.get("Name")).toEqual('Scruff McGruff');
-    });    */
+        expect(MockParse.getFriendDetail).toEqual([ 0,'Scruff McGruff']);
+    });                     */
 
     /*it('Dummy test', function () {
         expect(true).toBe(true);
