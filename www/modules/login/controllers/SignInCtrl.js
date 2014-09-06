@@ -9,7 +9,7 @@
  * Created with JetBrains WebStorm.
  * User: Javito
  * Date: 9/08/14
- * Time: 17:18
+ * Time: 17:19
  * To change this template use File | Settings | File Templates.
  */
 angular.module('authentication').controller('SignInCtrl', function($scope, $rootScope, Parse) {

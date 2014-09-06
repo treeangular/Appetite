@@ -19,9 +19,7 @@ module.exports = function(config) {
         'www/scripts/vendor/ionic/js/angular/angular-route.js',
         'www/scripts/vendor/ionic/js/angular/angular-mocks.js',
 
-        'www/modules/demo/bootstrap.js',
-        'www/modules/demo/controllers/*.js',
-        'www/modules/demo/services/*.js',
+        'www/modules/**/*.js',
         'www/scripts/app.js',
         'www/scripts/controllers/MainCtrl.js',
         'www/scripts/controllers/*.js',
