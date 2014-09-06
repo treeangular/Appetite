@@ -13,7 +13,7 @@
     -->
 
     <!-- ionic/angularjs js -->
-    <script src="scripts/vendor/ionic/js/angular/angular-route.js"></script>
+    <!--<script src="scripts/vendor/ionic/js/angular/angular-route.js"></script>-->
     <script src="scripts/vendor/ionic/js/ionic.bundle.js"></script>
     <script src="scripts/vendor/parse/parse-1.2.19.js"></script>
 
@@ -22,15 +22,19 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="modules/demo/bootstrap.js"></script>
     <script src="scripts/app.js"></script>
+
+    <script src="modules/demo/controllers/AccountCtrl.js"></script>
+    <script src="modules/demo/controllers/DashCtrl.js"></script>
+    <script src="modules/demo/controllers/FriendDetailCtrl.js"></script>
+    <script src="modules/demo/controllers/FriendsCtrl.js"></script>
+
+    <script src="modules/demo/services/mock.js"></script>
+    <script src="modules/demo/services/parse.js"></script>
+
     <script src="scripts/controllers/MainCtrl.js"></script>
-    <script src="scripts/controllers/AccountCtrl.js"></script>
-    <script src="scripts/controllers/DashCtrl.js"></script>
-    <script src="scripts/controllers/FriendDetailCtrl.js"></script>
-    <script src="scripts/controllers/FriendsCtrl.js"></script>
     <script src="scripts/services/mainService.js"></script>
-    <script src="scripts/services/mock.js"></script>
-    <script src="scripts/services/parse.js"></script>
   </head>
   <body ng-app="appetite" animation="slide-left-right-ios7">
     <!-- 

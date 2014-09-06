@@ -17,6 +17,7 @@ describe('Controller: FriendDetailCtrl', function() {
     var rtv;
 
     beforeEach(function () {
+
         module('appetite');
     });
 
