@@ -7,7 +7,7 @@ var googleAnalyticsIdApp = "XX-XXXXXXX-X";
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('appetite', ['ionic', 'demo'])
+angular.module('appetite', ['ionic', 'demo', 'authentication'])
 
 .run(function($ionicPlatform, $window, $rootScope) {
   $ionicPlatform.ready(function() {
@@ -85,7 +85,7 @@ angular.module('appetite', ['ionic', 'demo'])
       views: {
         'tab-account': {
           templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+          controller: 'SignInCtrl'
         }
       }
     })
