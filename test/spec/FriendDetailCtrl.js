@@ -50,17 +50,21 @@ describe('Controller: FriendDetailCtrl', function() {
         FriendDetailCtrl = $controller('FriendDetailCtrl', {
             $scope: scope, $stateParams: stateParams ,  Parse: MockParse, $rootScope: scope
         });
+
+        spyOn(MockParse, 'getFriendDetail').andCallThrough();
+        MockParse.getFriendDetail(0);
     }));
 
     it('should call getFriendDetail from Parse Service', function () {
-
-        spyOn(MockParse, 'getFriendDetail').andCallThrough();
         expect(MockParse.getFriendDetail).toHaveBeenCalled();
-
     });
 
-    it('Dummy test', function () {
+    /*it("Name should be 'Scruff McGruff'", function () {
+        expect(MockParse.getFriendDetail.get("Name")).toEqual('Scruff McGruff');
+    });    */
+
+    /*it('Dummy test', function () {
         expect(true).toBe(true);
-    });
+    });                             */
 });
 
