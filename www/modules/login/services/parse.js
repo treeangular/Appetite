@@ -19,7 +19,7 @@ angular.module('authentication')
  */
     .factory('Parse', function ($q, $rootScope) {
 
-        var signIn = function getFriendDetails(userToRegister)
+        var signIn = function signIn(userToRegister)
         {
 
             var user = new Parse.User();
