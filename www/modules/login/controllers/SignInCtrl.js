@@ -22,7 +22,7 @@ angular.module('authentication').controller('SignInCtrl', function($scope, $root
         //$rootScope.$broadcast(loadingRequestConst.Start);
         var deferred = $q.defer();
 
-        Parse.signIn(email, password, function (isSuccess, result) {
+        Parse.signIn(email, password, function (result) {
 
             if (isSuccess) {
                 $rootScope.$apply(function () {
@@ -45,7 +45,7 @@ angular.module('authentication').controller('SignInCtrl', function($scope, $root
         //$rootScope.$broadcast(loadingRequestConst.Start);
         var deferred = $q.defer();
 
-        Parse.signUp(email, password, function (isSuccess, result) {
+        Parse.signUp(email, password, function (result) {
 
             if (isSuccess) {
                 $rootScope.$apply(function () {
@@ -64,9 +64,8 @@ angular.module('authentication').controller('SignInCtrl', function($scope, $root
 
     $scope.signInUser = function (user) {
 
-        var promise = signInUser(user.Email, user.Password);
-        promise.then(function(user) {
-            console.log("We signed In user" + user.get("email"));
+        signInUser(user.Email, user.Password).then(function(result) {
+            console.log("We signed In user" + result.get("email"));
             //console.log(user.get("email"));
             //$location.path('/Main');
 
