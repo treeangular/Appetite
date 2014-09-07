@@ -1,13 +1,6 @@
 /**
  * Created with JetBrains WebStorm.
  * User: Javito
- * Date: 6/09/14
- * Time: 16:13
- * To change this template use File | Settings | File Templates.
- */
-/**
- * Created with JetBrains WebStorm.
- * User: Javito
  * Date: 23/08/14
  * Time: 11:42
  * To change this template use File | Settings | File Templates.
@@ -19,21 +12,35 @@ angular.module('authentication')
  */
     .factory('Parse', function ($q, $rootScope) {
 
-        var signIn = function signIn(userToRegister)
+        var signIn = function signIn(email, password)
         {
-
-            var user = new Parse.User();
             var deferred = $q.defer();
-            console.log("trying to register " + userToRegister.email);
-            user.set("username", userToRegister.email);
-            user.set("password", userToRegister.password);
-            user.set("email", userToRegister.email);
 
-            user.signUp(user).then(function(user){
+            Parse.User.logIn(email.toLowerCase(), password).then(function(user){
+                console.log("Successfully signed in user: " + email);
                 deferred.resolve(user)
             }, function(error){
-                deferred.reject("error signing in..");
-            })
+                deferred.reject("error signing in.." + error);
+            });
+
+            return deferred.promise;
+        };
+
+        var signUp = function signUp(email, password)
+        {
+            var user = new Parse.User();
+            var deferred = $q.defer();
+            console.log("trying to register " + email);
+            user.set("username", email);
+            user.set("password", password);
+            user.set("email", email);
+
+            user.signUp(user).then(function(user){
+                console.log("Successfully registered user: " + email);
+                deferred.resolve(user)
+            }, function(error){
+                deferred.reject("error signing up .." + error);
+            });
 
             return deferred.promise;
         };
@@ -41,7 +48,8 @@ angular.module('authentication')
 
         var parseService = {
             name: "Parse",
-            signIn: signIn
+            signIn: signIn,
+            signUp: signUp
         };
 
         return parseService;
