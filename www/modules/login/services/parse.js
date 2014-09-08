@@ -16,9 +16,9 @@ angular.module('authentication')
         {
             var deferred = $q.defer();
 
-            Parse.User.logIn(email.toLowerCase(), password).then(function(user){
-                console.log("Successfully signed in user: " + email);
-                deferred.resolve(user)
+            Parse.User.logIn(email.toLowerCase(), password).then(function(signedInUser){
+                console.log("Successfully signed in user: " + signedInUser.get("email"));
+                deferred.resolve(signedInUser);
             }, function(error){
                 deferred.reject("error signing in.." + error);
             });
@@ -35,9 +35,9 @@ angular.module('authentication')
             user.set("password", password);
             user.set("email", email);
 
-            user.signUp(user).then(function(user){
-                console.log("Successfully registered user: " + email);
-                deferred.resolve(user)
+            user.signUp(user).then(function(registeredUser){
+                console.log("Successfully registered user: " + registeredUser.get("email"));
+                deferred.resolve(registeredUser)  ;
             }, function(error){
                 deferred.reject("error signing up .." + error);
             });
