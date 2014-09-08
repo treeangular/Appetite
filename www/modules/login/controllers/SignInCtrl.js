@@ -5,9 +5,7 @@
  * Time: 17:19
  * To change this template use File | Settings | File Templates.
  */
-angular.module('authentication').controller('SignInCtrl', function($scope, $rootScope, Parse, $q) {
-
-
+angular.module('authentication').controller('SignInCtrl', function($scope, $rootScope, Parse, $q, $state) {
 
     if($rootScope.gaPlugIn !== undefined)
         $rootScope.gaPlugIn.trackPage(function(){}, function(){},"SignInCtrl");
@@ -53,6 +51,7 @@ angular.module('authentication').controller('SignInCtrl', function($scope, $root
 
         signInUser(user.Email, user.Password).then(function(result) {
             console.log("We signed In user: " + result.get("email"));
+            $state.transitionTo('tab.friends');
             //console.log(user.get("email"));
             //$location.path('/Main');
 
@@ -68,6 +67,7 @@ angular.module('authentication').controller('SignInCtrl', function($scope, $root
         var promise = signUpUser(user.Email, user.Password);
         promise.then(function(user) {
             console.log("We signed Up user: " + user.get("email"));
+            $state.transitionTo('tab.friends');
             //console.log(user.get("email"));
             //$location.path('/Main');
 
