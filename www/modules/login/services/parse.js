@@ -31,9 +31,9 @@ angular.module('authentication')
             var user = new Parse.User();
             var deferred = $q.defer();
             console.log("trying to register " + email);
-            user.set("username", email);
+            user.set("username", email.toLowerCase());
             user.set("password", password);
-            user.set("email", email);
+            user.set("email", email.toLowerCase());
 
             user.signUp(user).then(function(registeredUser){
                 console.log("Successfully registered user: " + registeredUser.get("email"));
