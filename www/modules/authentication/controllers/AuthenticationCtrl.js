@@ -5,7 +5,7 @@
  * Time: 17:19
  * To change this template use File | Settings | File Templates.
  */
-angular.module('authentication').controller('SignInCtrl', function($scope, $rootScope, Parse, $q, $state) {
+angular.module('authentication').controller('AuthenticationCtrl', function($scope, $rootScope, Parse, $q, $state) {
 
     if($rootScope.gaPlugIn !== undefined)
         $rootScope.gaPlugIn.trackPage(function(){}, function(){},"SignInCtrl");

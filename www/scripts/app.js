@@ -85,7 +85,7 @@ angular.module('appetite', ['ionic', 'demo', 'authentication'])
       views: {
         'tab-account': {
           templateUrl: 'templates/tab-account.html',
-          controller: 'SignInCtrl'
+          controller: 'AuthenticationCtrl'
         }
       }
     })
