@@ -2,8 +2,6 @@
 'use strict';
 
 describe('appetite', function () {
-    var scope,
-        controller;
 
 });
 
