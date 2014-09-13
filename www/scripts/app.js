@@ -102,10 +102,8 @@ angular.module('appetite', ['ionic', 'demo', 'authentication'])
       }
     })
 
-
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/authentication');
+  $urlRouterProvider.otherwise('tab/dash');
 
   loadParse();
 

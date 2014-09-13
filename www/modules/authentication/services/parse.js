@@ -12,13 +12,17 @@ angular.module('authentication')
  */
     .factory('Parse', function ($q, $rootScope) {
 
+        var currentUser;
+
         var signIn = function signIn(email, password)
         {
             var deferred = $q.defer();
 
             Parse.User.logIn(email.toLowerCase(), password).then(function(signedInUser){
                 console.log("Successfully signed in user: " + signedInUser.get("email"));
+                currentUser = signedInUser;
                 deferred.resolve(signedInUser);
+
             }, function(error){
                 deferred.reject("error signing in.." + error);
             });
@@ -37,6 +41,7 @@ angular.module('authentication')
 
             user.signUp(user).then(function(registeredUser){
                 console.log("Successfully registered user: " + registeredUser.get("email"));
+                currentUser = registeredUser;
                 deferred.resolve(registeredUser)  ;
             }, function(error){
                 deferred.reject("error signing up .." + error);
@@ -49,7 +54,9 @@ angular.module('authentication')
         var parseService = {
             name: "Parse",
             signIn: signIn,
-            signUp: signUp
+            signUp: signUp,
+            //this is the way of getting the user in a nice way
+            currentUser: function() { return currentUser; }
         };
 
         return parseService;
