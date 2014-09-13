@@ -42,6 +42,18 @@ angular.module('appetite', ['ionic', 'demo', 'authentication'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+      .state('authentication',{
+          url:'/authentication',
+          templateUrl: 'templates/authentication.html',
+          controller:'AuthenticationCtrl'
+
+      })
+
+      .state('forgotPassword', {
+          url: "templates/forgot-password",
+          templateUrl: "forgot-password.html"
+      })
+
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -85,13 +97,15 @@ angular.module('appetite', ['ionic', 'demo', 'authentication'])
       views: {
         'tab-account': {
           templateUrl: 'templates/tab-account.html',
-          controller: 'AuthenticationCtrl'
+          controller: 'AccountCtrl'
         }
       }
     })
 
+
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/authentication');
 
   loadParse();
 

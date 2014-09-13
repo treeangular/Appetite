@@ -51,7 +51,8 @@ angular.module('authentication').controller('AuthenticationCtrl', function($scop
 
         signInUser(user.Email, user.Password).then(function(result) {
             console.log("We signed In user: " + result.get("email"));
-            $state.transitionTo('tab.friends');
+            $state.go('tab.dash');
+            //$state.transitionTo('tab.friends');
             //console.log(user.get("email"));
             //$location.path('/Main');
 
@@ -67,7 +68,8 @@ angular.module('authentication').controller('AuthenticationCtrl', function($scop
         var promise = signUpUser(user.Email, user.Password);
         promise.then(function(user) {
             console.log("We signed Up user: " + user.get("email"));
-            $state.transitionTo('tab.friends');
+            $state.go('tab.dash');
+            //$state.transitionTo('tab.friends');
             //console.log(user.get("email"));
             //$location.path('/Main');
 
