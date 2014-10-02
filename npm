@@ -1,0 +1,4 @@
+keytool -genkey -v -keystore timeIsMoney-release-key.keystore
+-alias timeIsMoneyReleaseKEy -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore timeIsMoney-release-key.keystore timeIsMoney-release-unsigned.apk timeismoneyreleaseKey
