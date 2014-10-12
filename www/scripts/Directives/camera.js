@@ -1,7 +1,7 @@
 'use strict';
 
 //angular.module('BookCrossingApp')
-BookCrossingApp.directive('bcaCamera', function () {
+angular.module('appetite.controllers').directive('bcaCamera', function () {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -34,7 +34,7 @@ BookCrossingApp.directive('bcaCamera', function () {
 });
 
 
-BookCrossingApp.directive('bcaCameraTakePicture', function () {
+angular.module('appetite.controllers').directive('bcaCameraTakePicture', function () {
     return {
         restrict: 'A',
         require: 'ngModel',

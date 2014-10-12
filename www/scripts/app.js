@@ -54,6 +54,11 @@ angular.module('appetite', ['ionic', 'demo', 'authentication'])
           templateUrl: "forgot-password.html"
       })
 
+      .state('addFoodExperience', {
+          url: "templates/addFoodExperience",
+          templateUrl: "addFoodExperience.html"
+      })
+
     // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
@@ -73,15 +78,26 @@ angular.module('appetite', ['ionic', 'demo', 'authentication'])
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+//    .state('tab.friends', {
+//      url: '/friends',
+//      views: {
+//        'tab-friends': {
+//          templateUrl: 'templates/tab-friends.html',
+//          controller: 'FriendsCtrl'
+//        }
+//      }
+//    })
+
+    .state('tab.addFoodExperience', {
+        url: '/addFoodExperience',
+        views: {
+            'addFoodExperience': {
+                templateUrl: 'templates/addFoodExperience.html',
+                controller: 'AddFoodExperienceCtrl'
+            }
         }
-      }
     })
+
     .state('tab.friend-detail', {
       url: '/friend/:friendId',
       views: {
