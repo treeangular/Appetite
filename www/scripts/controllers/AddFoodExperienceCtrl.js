@@ -15,7 +15,7 @@ angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', funct
             $scope.foodPicture = value;
 
             isFileToUpdate = true;
-            window.resolveLocalFileSystemURI(value, function (entry) {
+            window.resolveLocalFileSystemURL(value, function (entry) {
 
                 var reader = new FileReader();
 
