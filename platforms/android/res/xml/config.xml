@@ -8,11 +8,18 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Appetite</name>
     <description>
         An Application for sharing food.
     </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
+    <author email="treeangular@gmail.com" href="http://ionicframework.com/">
       Angular Team
     </author>
     <content src="index.html" />

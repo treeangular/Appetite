@@ -13,24 +13,44 @@
     -->
 
     <!-- ionic/angularjs js -->
+    <!--<script src="scripts/vendor/ionic/js/angular/angular-route.js"></script>-->
     <script src="scripts/vendor/ionic/js/ionic.bundle.js"></script>
     <script src="scripts/vendor/parse/parse-1.2.19.js"></script>
+
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="modules/authentication/bootstrap.js"></script>
+    <script src="modules/demo/bootstrap.js"></script>
     <script src="scripts/app.js"></script>
+
+      <!-- demo-->
+
+    <script src="modules/demo/controllers/AccountCtrl.js"></script>
+    <script src="modules/demo/controllers/DashCtrl.js"></script>
+    <script src="modules/demo/controllers/FriendDetailCtrl.js"></script>
+    <script src="modules/demo/controllers/FriendsCtrl.js"></script>
+
+    <script src="modules/demo/services/mock.js"></script>
+    <script src="modules/demo/services/parse.js"></script>
+
+
+    <!-- authentication-->
+    <script src="modules/authentication/controllers/AuthenticationCtrl.js"></script>
+    <script src="modules/authentication/services/parse.js"></script>
+
+    <!-- Own module from the app - Custom -->
     <script src="scripts/controllers/MainCtrl.js"></script>
-    <script src="scripts/controllers/AccountCtrl.js"></script>
-    <script src="scripts/controllers/DashCtrl.js"></script>
-    <script src="scripts/controllers/FriendDetailCtrl.js"></script>
-    <script src="scripts/controllers/FriendsCtrl.js"></script>
+    <script src="scripts/controllers/AddFoodExperienceCtrl.js"></script>
     <script src="scripts/services/mainService.js"></script>
-    <script src="scripts/services/mock.js"></script>
-    <script src="scripts/services/parse.js"></script>
+
+    <!-- Directives -->
+    <script src="scripts/directives/camera.js"></script>
+
   </head>
-  <body ng-app="appetite" animation="slide-left-right-ios7">
+  <body ng-app="appetite" animation="slide-left-right-ios7" class="platform-android platform-cordova platform-webview">
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
