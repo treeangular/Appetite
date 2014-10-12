@@ -7,7 +7,7 @@ var googleAnalyticsIdApp = "XX-XXXXXXX-X";
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'])
+angular.module('appetite', ['ionic', 'demo', 'authentication', 'appetite.controllers'])
 
 .run(function($ionicPlatform, $window, $rootScope) {
   $ionicPlatform.ready(function() {
@@ -21,7 +21,7 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
       StatusBar.styleDefault();
     }
 
-    gaPlugin = $window.plugins.gaPlugin;
+    /*gaPlugin = $window.plugins.gaPlugin;
     gaPlugin.init(function(){}, function(){console.log("Error")}, googleAnalyticsIdApp, 10);
     $rootScope.gaPlugIn = gaPlugin;
 
@@ -29,7 +29,7 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
       if($rootScope.gaPlugIn === undefined)
       {
           console.log("App: $rootScope.gaPlugIn === undefined ");
-      }
+      }    */
 
   });
 })
@@ -41,6 +41,23 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+
+      .state('authentication',{
+          url:'/authentication',
+          templateUrl: 'templates/authentication.html',
+          controller:'AuthenticationCtrl'
+
+      })
+
+      .state('forgotPassword', {
+          url: "templates/forgot-password",
+          templateUrl: "forgot-password.html"
+      })
+
+      .state('addFoodExperience', {
+          url: "templates/addFoodExperience",
+          templateUrl: "addFoodExperience.html"
+      })
 
     // setup an abstract state for the tabs directive
     .state('tab', {
@@ -61,15 +78,26 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+//    .state('tab.friends', {
+//      url: '/friends',
+//      views: {
+//        'tab-friends': {
+//          templateUrl: 'templates/tab-friends.html',
+//          controller: 'FriendsCtrl'
+//        }
+//      }
+//    })
+
+    .state('tab.addFoodExperience', {
+        url: '/addFoodExperience',
+        views: {
+            'addFoodExperience': {
+                templateUrl: 'templates/addFoodExperience.html',
+                controller: 'AddFoodExperienceCtrl'
+            }
         }
-      }
     })
+
     .state('tab.friend-detail', {
       url: '/friend/:friendId',
       views: {
@@ -91,7 +119,7 @@ angular.module('appetite', ['ionic', 'appetite.controllers', 'appetite.services'
     })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('tab/dash');
 
   loadParse();
 

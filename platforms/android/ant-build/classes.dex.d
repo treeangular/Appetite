@@ -1,10 +1,12 @@
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes.dex : \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\BuildConfig.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\HelloCordova.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\R$attr.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\R$drawable.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\R$string.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\R$xml.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\com\ionicframework\starter\R.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
-C:\Users\Javito\Documents\GitHub\Appetite\platforms\android\ant-build\dexedLibs\classes-c5f537b8a800384543fda6c7d13b5798.jar \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes.dex : \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/Appetite.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/BuildConfig.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/R$attr.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/R$drawable.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/R$string.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/R$xml.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/com/ionicframework/starter/R.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/org/apache/cordova/camera/CameraLauncher.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/org/apache/cordova/camera/ExifHelper.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/classes/org/apache/cordova/camera/FileHelper.class \
+/Users/Arcayne/Appetite/platforms/android/ant-build/dexedLibs/classes-17a9f060401299b9c642da1fbbde607a.jar \

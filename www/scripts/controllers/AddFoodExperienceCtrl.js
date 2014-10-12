@@ -3,7 +3,6 @@ angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', funct
     if($rootScope.gaPlugIn !== undefined)
         $rootScope.gaPlugIn.trackPage(function(){}, function(){},"AddFoodExperienceCtrl");
 
-    $scope.showFoodPicture = false;
     var fileToUpdate = undefined;
     var isFileToUpdate;
 
@@ -14,7 +13,6 @@ angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', funct
     $scope.$watch('foodPicture', function (value) {
         if (value) {
             $scope.foodPicture = value;
-            $scope.showFoodPicture = true;
 
             isFileToUpdate = true;
             window.resolveLocalFileSystemURI(value, function (entry) {
@@ -56,7 +54,7 @@ angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', funct
         }
         else {
             console.log(">> $scope.$watch(else value is not set or something like this.");
-            $scope.foodPicture = "styles/img/bookToAdd.png";
+            $scope.foodPicture = "styles/img/plate7.png";
 
         }
     }, true);
