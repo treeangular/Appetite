@@ -1,4 +1,4 @@
-angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', function($scope, $rootScope) {
+angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', function($scope, $rootScope, $window) {
 
     if($rootScope.gaPlugIn !== undefined)
         $rootScope.gaPlugIn.trackPage(function(){}, function(){},"AddFoodExperienceCtrl");
