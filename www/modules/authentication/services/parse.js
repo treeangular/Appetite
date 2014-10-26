@@ -55,6 +55,7 @@ angular.module('authentication')
             name: "Parse",
             signIn: signIn,
             signUp: signUp,
+            shareFoodExperience: shareFoodExperience,
             //this is the way of getting the user in a nice way
             currentUser: function() { return currentUser; }
         };

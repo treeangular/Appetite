@@ -1,14 +1,10 @@
-angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', function($scope, $rootScope, $window) {
+angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', function($scope, $rootScope, $window, Parse, $q, $state) {
 
     if($rootScope.gaPlugIn !== undefined)
         $rootScope.gaPlugIn.trackPage(function(){}, function(){},"AddFoodExperienceCtrl");
 
     var fileToUpdate = undefined;
     var isFileToUpdate;
-
-    $scope.ShareFoodExperience = function () {
-        console.log('Controler is working  . . .');
-    };
 
     $scope.$watch('foodPicture', function (value) {
         if (value) {
@@ -59,4 +55,45 @@ angular.module('appetite.controllers').controller('AddFoodExperienceCtrl', funct
         }
     }, true);
 
+    $scope.ShareFoodExperience = function (foodExperience) {
+
+        if(angular.isDefined(fileToUpdate))
+        {
+            var promise = shareFoodExperience(fileToUpdate,foodExperience);
+
+            promise.then(function(user) {
+                console.log("Shared food experience");
+                $state.go('tab.dash');
+
+            }, function(reason) {
+                console.log("Ooops we got an error signing up: " + reason);
+                //$rootScope.TypeNotification = ErrorConst.TypeNotificationError;
+                //$rootScope.MessageNotification = reason;
+            });
+        }
+        else
+        {
+            console.log("No food picture defined");
+        }
+    };
+
+    function shareFoodExperience(fileToUpdate,foodExperience)
+    {
+        //$rootScope.$broadcast(loadingRequestConst.Start);
+        var deferred = $q.defer();
+
+        Parse.shareFoodExperience(fileToUpdate,foodExperience).then(
+
+            function(result){
+                //avocarrot.createStory('Released', { name: releaseInfo }, "Releasing is caring!");
+                deferred.resolve(result);
+                console.log("Should be saved");
+
+            },function(error){
+                deferred.reject(error);
+                console.log("Should not be saved => ERROR!");
+            })
+
+        return deferred.promise;
+    }
 });
