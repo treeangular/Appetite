@@ -15,20 +15,19 @@
             <!--<div class="list">-->
                 <label class="item item-input">
                     <span class="input-label">Price</span>
-                    <input type="number" ng-model="experience.Price">
+                    <input type="number" ng-model="foodExperience.Price">
                 </label>
         </div>
         <div class="row">
                 <label class="item item-input">
                     <span class="input-label">Description</span>
-                    <input type="text" ng-model="experience.Description">
+                    <input type="text" ng-model="foodExperience.Description">
                 </label>
         </div>
         <div class="row">
             <div class="col">
-                <button class="button button-positive"  ng-click="ShareFoodExperience()"> Share it!</button>
+                <button class="button button-positive" ng-click="ShareFoodExperience(foodExperience)"> Share it!</button>
             </div>
         </div>
-
     </ion-content>
 </ion-view>

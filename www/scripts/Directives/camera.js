@@ -13,8 +13,8 @@ angular.module('appetite.controllers').directive('bcaCamera', function () {
                         destinationType:Camera.DestinationType.FILE_URI,
                         encodingType: Camera.EncodingType.JPEG,
                         sourceType : Camera.PictureSourceType.PHOTOLIBRARY ,//CAMERA,
-                        targetWidth: 95,
-                        targetHeight: 95
+                        targetWidth: 128,
+                        targetHeight: 128
                     });
                 function onSuccess(imageData) {
 
@@ -47,8 +47,8 @@ angular.module('appetite.controllers').directive('bcaCameraTakePicture', functio
                         destinationType:Camera.DestinationType.FILE_URI,
                         encodingType: Camera.EncodingType.JPEG,
                         sourceType : Camera.PictureSourceType.CAMERA,
-                        targetWidth: 95,
-                        targetHeight: 95
+                        targetWidth: 128,
+                        targetHeight: 128
                     });
                 function onSuccess(imageData) {
 //
